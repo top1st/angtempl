@@ -1,0 +1,16 @@
+.rewards-account {
+    display: flex;
+
+    &__sidenav {
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+        background-color: whitesmoke;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 100%;
+    }
+}

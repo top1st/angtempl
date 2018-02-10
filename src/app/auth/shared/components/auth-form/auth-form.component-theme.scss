@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+@mixin auth-form-theme($theme) {
+    
+    $primary: map-get($theme, primary);
+      
+    auth-form {
+        background-color: mat-color($primary, A200);
+    }
+  }

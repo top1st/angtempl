@@ -1,0 +1,13 @@
+.step-content {
+    margin: 8px;
+}
+
+.step-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    &.single {
+        flex-direction: row-reverse
+    }
+}

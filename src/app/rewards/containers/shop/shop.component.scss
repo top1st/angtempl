@@ -1,0 +1,15 @@
+.shop {
+    display: flex;
+
+    &__sidenav {
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 100%;
+    }
+}

@@ -1,0 +1,30 @@
+<div [formGroup]="parent">
+    <mat-card style="padding: 0;">
+        <mat-toolbar style="height: 48px;">
+            Selected Employees
+        </mat-toolbar>
+        <div formArrayName="employees">
+            <mat-list>
+                <ng-container *ngIf="employees.length === 0; else employeeItems">
+                    <mat-list-item>
+                        None selected.
+                    </mat-list-item>
+                </ng-container>
+                <ng-template #employeeItems>
+                    <mat-list-item
+                        *ngFor="let employee of employees; index as i;">
+                        {{ employee.value.name + ' ' + employee.value.lastName}}
+                        <span style="flex: 1 1 auto;"></span>
+                        <button
+                            (click)="onRemove(i)"
+                            type="button"
+                            color="primary"
+                            mat-icon-button>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </mat-list-item>
+                </ng-template>
+            </mat-list>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,15 @@
+.file-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__upload {
+        margin-right: 8px;
+    }
+}
+
+::ng-deep {
+    .mat-form-field {
+        width: 100%;
+    }
+}

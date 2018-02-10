@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+}
+h1 {
+    text-align: center;
+}
+button {
+    width: 100%;
+}
+.error {
+    color: #f44336;
+}

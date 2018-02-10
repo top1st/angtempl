@@ -1,0 +1,102 @@
+:host {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0 15px;
+    color: white;
+
+    ::ng-deep {
+        .mat-form-field-label {
+            color: white;
+        }
+
+        .mat-form-field-underline {
+            background-color: white;
+        }
+    }
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+  }
+  
+  .fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  @media (min-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+
+.video-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: .4;
+    background: #000;
+}
+
+.welcome-intro {
+    margin: 0 24px;
+    max-width: 529px;
+}
+
+.auth-form {
+    max-width: 264px;
+    width: 100%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        mat-form-field {
+            width: 100%;
+        }
+    }
+
+    &__action, &__toggle {
+        display: flex;
+        justify-content: center;
+        margin: 16px 0 0 0;
+    }
+
+    &__toggle {
+        a {
+            color: white !important;
+        }
+    }
+
+    &__additional-options {
+        i {
+            color: white;
+        }
+        button {
+            font-size: 24px;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<div [formGroup]="parent">
+    <mat-form-field style="width: 100%;">
+        <input
+            #input
+            type="text"
+            placeholder="Add Employee(s)"
+            matInput
+            [matAutocomplete]="auto"
+            formControlName="selector">
+        <mat-autocomplete
+            #auto="matAutocomplete"
+            (optionSelected)="onAdd($event); input.blur()">
+            <mat-option
+                *ngFor="let option of filtered | async"
+                [value]="option">
+                <span>{{ option.name + ' ' + option.lastName }}</span>
+                |
+                <small>{{ option.department }}</small>
+                |
+                <small>#{{ option.id }}</small>
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</div>

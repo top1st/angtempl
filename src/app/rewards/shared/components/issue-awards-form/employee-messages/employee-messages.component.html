@@ -1,0 +1,47 @@
+<div [formGroup]="parent">
+    <div style="margin: 8px;">
+        <mat-card style="padding: 0;">
+            <mat-toolbar>
+                Public Message to Recipient
+            </mat-toolbar>
+            <div style="margin: 16px;">
+                <p>This will be a public message to the recipient that will appear under Recently Recognized on the home page. (Maximum 500 characters)</p>
+                <div style="display: flex; flex-direction: column;">
+                    <p>Post on recently recognized:</p>
+                    <mat-radio-group formControlName="postOnRecentlyRecognized">
+                        <mat-radio-button [value]="true" style="padding-right: 16px;">Post</mat-radio-button>
+                        <mat-radio-button [value]="false">Do not post</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <mat-form-field>
+                    <textarea
+                        matInput
+                        placeholder="Public message"
+                        matTextareaAutosize
+                        matAutosizeMinRows="2"
+                        matAutosizeMaxRows="5"
+                        formControlName="publicMessage">
+                    </textarea>
+                </mat-form-field>
+            </div>
+        </mat-card>
+        <mat-card style="padding: 0;">
+            <mat-toolbar>
+                Private Message to Recipient
+            </mat-toolbar>
+            <div style="margin: 16px;">
+                <p>This message will only appear in the email notification to the recipient. (Maximum 500 characters)</p>
+                <mat-form-field>
+                    <textarea
+                        matInput
+                        placeholder="Private message"
+                        matTextareaAutosize
+                        matAutosizeMinRows="2"
+                        matAutosizeMaxRows="5"
+                        formControlName="privateMessage">
+                    </textarea>
+                </mat-form-field>
+            </div>
+        </mat-card>
+    </div>
+</div>

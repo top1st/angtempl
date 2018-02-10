@@ -1,0 +1,62 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <mat-horizontal-stepper>
+
+        <mat-step *ngIf="!hideAmountStep" [stepControl]="form">
+            <ng-template matStepLabel>Select Amount</ng-template>
+            <amount-selector
+                [parent]="form">
+            </amount-selector>
+            <div class="step-actions single">
+                <button
+                    type="button"
+                    [disabled]="amountRequired"
+                    mat-button
+                    matStepperNext
+                    type="button"
+                    color="primary">NEXT</button>
+            </div>
+        </mat-step>
+
+        <mat-step [stepControl]="form">
+            <ng-template matStepLabel>Select Employees</ng-template>
+            <div class="step-content">
+                <employee-selector
+                    [parent]="form"
+                    (added)="addEmployee($event)">
+                </employee-selector>
+                <selected-employees
+                    [parent]="form"
+                    (remove)="removeEmployee($event)">
+                </selected-employees>
+            </div>
+            <div class="step-actions">
+                <button *ngIf="!hideAmountStep" type="button" mat-button matStepperPrevious color="primary">BACK</button>
+                <span class="flexible-space"></span>
+                <button type="button" mat-button matStepperNext color="primary">NEXT</button>
+            </div>
+        </mat-step>
+
+        <mat-step [stepControl]="form">
+            <ng-template matStepLabel>Add Messages</ng-template>
+            <employee-messages
+                [parent]="form">
+            </employee-messages>
+            <div class="step-actions">
+                <button type="button" mat-button matStepperPrevious color="primary">BACK</button>
+                <button type="button" mat-button matStepperNext color="primary">NEXT</button>
+            </div>
+        </mat-step>
+
+        <mat-step [stepControl]="form">
+            <ng-template matStepLabel>Preview & Submit</ng-template>
+            <div class="step-content">
+                <pre>{{ formValue | async | json }}</pre>
+            </div>
+            <div class="step-actions">
+                <button type="button" mat-button matStepperPrevious color="primary">BACK</button>
+                <button type="submit" mat-button color="primary">SUBMIT</button>
+            </div>
+        </mat-step>
+
+    </mat-horizontal-stepper>
+</form>

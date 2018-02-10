@@ -1,0 +1,14 @@
+<p>AWW Corp Account - 1612 pts</p>
+<div [formGroup]="parent">
+    <mat-form-field>
+        <mat-select formControlName="amount">
+            <mat-option value="">Amount</mat-option>
+            <mat-option
+                *ngFor="let amount of amounts"
+                [value]="amount">
+                {{ amount }} pts
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="required">Amount is required.</mat-error>
+    </mat-form-field>
+</div>

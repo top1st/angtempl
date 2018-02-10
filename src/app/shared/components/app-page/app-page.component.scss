@@ -1,0 +1,80 @@
+:host {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+mat-sidenav {
+    background-color: #19212b;
+
+    a, button {
+        color: white;
+    }
+}
+
+::ng-deep .mat-sidenav-content {
+    overflow: hidden;
+}
+
+.app-page {
+
+    ::ng-deep .mat-tab-link {
+        color: white;
+    }
+
+    .header-top {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 3;
+        padding-left: 8px;
+        background: rgba(0, 0, 0, 0.65);
+        width: 100%;
+    }
+
+    .header {
+        height: 280px;
+        min-height: 280px;
+        max-height: 280px;
+        position: relative;
+        background-size: 100% auto;
+        background-position: 0 50%;
+        background-repeat: no-repeat;
+        color: #FFFFFF;
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+
+            .header-bottom {
+                left: 21px;
+                position: relative;
+                z-index: 2;
+
+                h1 {
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.55);
+        }
+    }
+
+    .content {
+        margin: 12px;
+    }
+
+}
